@@ -65,7 +65,7 @@ app.set('view engine','.hbs');
 
 
 const store = new MongoStore({
-    uri: 'mongodb+srv://Tether:tarun123@clustertether.pdixo.mongodb.net/storytask?retryWrites=true&w=majority' ,
+    uri: process.env.MONGO_URI ,
     collection:'mySessions'
   })
   
@@ -82,16 +82,7 @@ app.use(session({
 )
 
 
-// app.use(
-//     session({
-//         secret: 'story book',
-//         resave: false,
-//         saveUninitialized: false,
-//         store: MongoStore.create({
-//             mongoUrl: 'mongodb+srv://Tether:tarun123@clustertether.pdixo.mongodb.net/storytask?retryWrites=true&w=majority'
-//         })
-//     })
-// );
+
 
 //passport middleware
 app.use(passport.initialize())
