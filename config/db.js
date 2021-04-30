@@ -3,17 +3,16 @@ const mongoose = require('mongoose');
 
 const ConnectDb= async ()=>{
     try {
-        console.log("URI : "+process.env.MONGO_URI+process.env.PORT );
-        const con  = await mongoose.connect(`mongodb+srv://Tether:tarun123@clustertether.pdixo.mongodb.net/storytask?retryWrites=true&w=majority`,{
+    ;
+        const con  = await mongoose.connect(process.env.MONGO_URI,{
             useNewUrlParser:true,
             useUnifiedTopology:true,
             useFindAndModify:false
         });
-        console.log("URI : "+process.env.MONGO_URI+process.env.PORT );
-        console.log(`MongoDb connection : ${con.connection.host}`)
+        
     } catch (error) {
-        console.log("where");
-        console.log("opaka"+error);
+ 
+        console.log(error);
         process.exit(1)   
     }
 }

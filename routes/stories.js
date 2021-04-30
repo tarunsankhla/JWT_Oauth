@@ -6,7 +6,7 @@ const Story = require('../Model/Story');
 
 
 //@desc Show add page
-// @route GEt/stories.add
+// @route GEt/stories/add
 router.get('/add',ensureAuth,(req,res)=>{
     res.render('stories/add');
 })
@@ -17,7 +17,6 @@ router.get('/add',ensureAuth,(req,res)=>{
 router.post('/',ensureAuth,async(req,res)=>{
     try{
         req.body.user=req.user.id;
-        // req.body.title=req.body.tile;
         console.log(req.body);
         await Story.create(req.body)
         res.redirect('/dashboard')
