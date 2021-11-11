@@ -1,5 +1,12 @@
 <h3>Add Task</h3>
 <div class="row">
+    <form  method="POST" action="/stories/upload" >
+        <input type="file" id="input_excel"/>
+        <input type="submit" value="upload" class="btn">
+    </form>
+
+</div>
+<div class="row">
     <form action="/stories" method="POST" class="col s12">
         <div class="row">
             <div class="input-field">
@@ -31,3 +38,4 @@
         </div>
     </form>
 </div>
+<script src="./../../routes/stories.js"></script>

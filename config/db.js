@@ -12,7 +12,7 @@ const ConnectDb= async ()=>{
         
     } catch (error) {
  
-        console.log(error);
+        console.log("ok error encountered while connnecting in db.js"+error);
         process.exit(1)   
     }
 }
